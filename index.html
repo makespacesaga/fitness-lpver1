@@ -5,6 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Make &amp; Space — 女性専用フィットネスジム | 初月0円キャンペーン</title>
 <meta name="description" content="佐賀駅北口徒歩3分の女性専用フィットネスジム。パーソナルトレーニング・骨盤矯正。初月0円・残り20名限定キャンペーン実施中。">
+<!-- Google tag (gtag.js) - GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0QZJC58J13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0QZJC58J13');
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600&family=Noto+Serif+JP:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -922,6 +930,18 @@ const sticky = document.getElementById('sticky');
 window.addEventListener('scroll', () => {
   sticky.classList.toggle('visible', window.scrollY > 600);
 }, { passive: true });
+
+// コンバージョン計測: LINEボタンクリック
+document.querySelectorAll('a[href*="line.me"]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    if (typeof gtag === 'function') {
+      gtag('event', 'line_click', {
+        event_category: 'conversion',
+        event_label: 'fitness_line'
+      });
+    }
+  });
+});
 </script>
 </body>
 </html>
