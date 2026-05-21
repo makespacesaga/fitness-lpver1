@@ -12,6 +12,7 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-0QZJC58J13');
+  gtag('config', 'AW-605094393');
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -935,9 +936,10 @@ window.addEventListener('scroll', () => {
 document.querySelectorAll('a[href*="line.me"]').forEach(btn => {
   btn.addEventListener('click', () => {
     if (typeof gtag === 'function') {
-      gtag('event', 'line_click', {
-        event_category: 'conversion',
-        event_label: 'fitness_line'
+      gtag('event', 'conversion', {
+        'send_to': 'AW-605094393/ImeQCKqZk7EcEPmDxKAC',
+        'value': 1.0,
+        'currency': 'JPY'
       });
     }
   });
