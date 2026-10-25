@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Make &amp; Space — 女性専用フィットネスジム | 初月0円キャンペーン</title>
-<meta name="description" content="佐賀駅北口徒歩3分の女性専用フィットネスジム。パーソナルトレーニング・骨盤矯正。初月0円キャンペーン実施中。">
+<title>Make &amp; Space — 女性専用フィットネスジム | 入会キャンペーン実施中</title>
+<meta name="description" content="佐賀駅北口徒歩1分の女性専用フィットネスジム。24時間使えるオールプラン月額6,800円（税込・6ヶ月継続条件）。入会キャンペーンで入会金・事務手数料・カード発行手数料が0円（先着20名）。">
 <!-- Google tag (gtag.js) - GA4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0QZJC58J13"></script>
 <script>
@@ -37,7 +37,9 @@
   --mono: "JetBrains Mono",ui-monospace,monospace;
 }
 *,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
 html,body{margin:0;padding:0}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:400;-webkit-font-smoothing:antialiased;line-height:1.7;letter-spacing:.01em}
 img,svg{display:block;max-width:100%}
 a{color:inherit}
@@ -60,7 +62,7 @@ section{position:relative}
 .nav .links{display:flex;gap:28px;align-items:center;font-size:13px;letter-spacing:.06em;color:var(--ink-soft)}
 .nav .links a{text-decoration:none;transition:color .2s}
 .nav .links a:hover{color:var(--ink)}
-.nav .nav-cta{padding:11px 22px;font-size:13px;font-weight:500;letter-spacing:.08em;background:var(--accent);color:#fff;border-radius:999px;text-decoration:none;transition:background .2s}
+.nav .nav-cta{white-space:nowrap;padding:11px 22px;font-size:13px;font-weight:500;letter-spacing:.08em;background:var(--accent);color:#fff;border-radius:999px;text-decoration:none;transition:background .2s}
 .nav .nav-cta:hover{background:var(--accent-deep)}
 @media(max-width:720px){.nav .links{display:none}}
 
@@ -87,6 +89,8 @@ section{position:relative}
 .hero-tag-pill::before{content:"✓";color:var(--accent-deep);font-size:11px}
 
 .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.hero-reassure{margin:18px 0 0;font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--ink-mute);display:flex;align-items:center;gap:8px}
+.hero-reassure::before{content:"✓";color:var(--accent-deep);font-size:12px}
 
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:18px 32px;border-radius:999px;font-size:14px;letter-spacing:.1em;font-weight:500;transition:transform .2s,background .2s,color .2s;text-decoration:none}
 .btn-primary{background:var(--accent);color:#fff;box-shadow:0 4px 20px rgba(0,0,0,.12)}
@@ -252,16 +256,24 @@ section{position:relative}
 
 /* ============ Mobile ============ */
 @media(max-width:720px){.access-grid{grid-template-columns:1fr !important}}
+.sp-br{display:none}
 @media(max-width:480px){
+  .sp-br{display:inline}
+  .nav{padding:12px 16px}
+  .nav .nav-tag{display:none}
+  .nav .nav-cta{padding:10px 16px;font-size:12px}
   .wrap,.wrap-narrow{padding:0 16px}
   .section-pad{padding:56px 0}
   .hero{padding:90px 0 48px}
   .free-badge .yen{font-size:28px}
   .hero-title{font-size:clamp(36px,11vw,60px)}
   .hero-lead{font-size:14px}
-  .hero-stats{flex-wrap:wrap}
-  .hstat{width:48%;border-right:none;padding-right:0;margin-right:0;padding-bottom:12px}
-  .hstat:nth-child(1),.hstat:nth-child(2){border-bottom:1px solid var(--line)}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+  .hstat{padding:0 8px;margin:0;border-right:1px solid var(--line)}
+  .hstat:first-child{padding-left:0}
+  .hstat:last-child{border-right:none}
+  .hstat-num{font-size:24px}
+  .hstat-lbl{font-size:9px;letter-spacing:.04em}
   .hero-ctas{flex-direction:column;align-items:stretch}
   .hero-ctas .btn{justify-content:center;text-align:center}
   .results-grid{grid-template-columns:1fr 1fr}
@@ -282,6 +294,42 @@ section{position:relative}
   .final-cta{padding:72px 0}
   .final-cta .price-display .now{font-size:56px}
 }
+
+/* ============ Media ============ */
+.media-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.media-photo{border-radius:8px;overflow:hidden;aspect-ratio:3/2}
+.media-photo img{width:100%;height:100%;object-fit:cover}
+.badges{display:flex;gap:12px;flex-wrap:wrap}
+.badges img{height:96px;width:auto}
+.badge-note{margin:12px 0 0;font-size:11px;color:var(--ink-mute);letter-spacing:.02em}
+@media(max-width:820px){.media-grid{grid-template-columns:1fr;gap:32px}.badges img{height:80px}}
+
+/* ============ Flow: 必要なもの ============ */
+.bring{margin-top:28px;display:flex;flex-wrap:wrap;gap:8px 24px;align-items:center;padding:18px 24px;background:var(--bg-card);border:1px solid var(--line);border-radius:6px;font-size:14px;color:var(--ink-soft)}
+.bring strong{color:var(--ink);font-weight:600}
+
+/* ============ Pricing: 手数料0円＋3プラン ============ */
+.fee-box{max-width:760px;margin:0 auto 32px;background:var(--ink);color:var(--bg);border-radius:10px;padding:28px 36px;display:grid;grid-template-columns:auto 1fr auto;gap:12px 32px;align-items:center;position:relative;overflow:hidden}
+.fee-badge{grid-column:1/-1;font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--accent)}
+.fee-list{list-style:none;margin:0;padding:0;display:grid;gap:4px;font-size:14px;color:rgba(255,255,255,.8);grid-column:1/3}
+.fee-list li{display:flex;justify-content:space-between;gap:24px;max-width:300px}
+.fee-list s{color:rgba(255,255,255,.5)}
+.fee-zero{font-family:var(--serif);font-size:88px;line-height:1;color:var(--accent);font-weight:600;text-align:right;white-space:nowrap}
+.fee-zero small{font-size:15px;color:rgba(255,255,255,.75);font-weight:400;margin:0 4px}
+.fee-note{grid-column:1/-1;margin:0;font-size:12px;color:rgba(255,255,255,.55)}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1000px;margin:0 auto}
+.plan-card{background:var(--bg-card);border:1px solid var(--line);border-radius:10px;padding:32px 26px 28px;position:relative;text-align:center}
+.plan-card.featured{border:2px solid var(--accent);box-shadow:0 12px 32px rgba(42,37,32,.08)}
+.plan-flag{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-size:12px;font-weight:600;letter-spacing:.1em;padding:5px 16px;border-radius:999px;white-space:nowrap}
+.plan-name{font-family:var(--serif);font-size:22px;font-weight:500;letter-spacing:.06em}
+.plan-time{font-size:12px;color:var(--ink-soft);margin-top:4px;min-height:1.7em}
+.plan-price{font-family:var(--serif);font-size:44px;color:var(--accent-deep);line-height:1.1;margin:14px 0 18px;white-space:nowrap}
+.plan-price small{font-family:var(--sans);font-size:13px;color:var(--ink-soft);margin:0 3px}
+.plan-card ul{list-style:none;margin:0;padding:16px 0 0;border-top:1px solid var(--line);display:grid;gap:8px;font-size:13px;color:var(--ink-soft);text-align:left}
+.plan-card li::before{content:"✓ ";color:var(--accent-deep);font-weight:600}
+.plan-card li.cond{color:var(--accent-deep);font-weight:600}
+.plan-card li.cond::before{content:"※ "}
+@media(max-width:820px){.plans{grid-template-columns:1fr;gap:24px}.fee-box{grid-template-columns:1fr;padding:24px 22px}.fee-list{grid-column:auto}.fee-zero{text-align:left;font-size:72px}}
 
 /* ============ FAQ ============ */
 .faq{display:grid;gap:10px}
@@ -335,17 +383,17 @@ section{position:relative}
 <!-- NAV -->
 <nav class="nav">
   <a href="#" style="display:flex;align-items:center;gap:10px;text-decoration:none">
-    <img src="images/logo.png" alt="Make & Space" style="height:30px;width:auto">
-    <span style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--accent-deep);padding:3px 8px;background:var(--accent-soft);border-radius:2px">女性専用ジム</span>
+    <img src="images/logo-2.png" alt="Make & Space" style="height:30px;width:auto">
+    <span class="nav-tag" style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--accent-deep);padding:3px 8px;background:var(--accent-soft);border-radius:2px;white-space:nowrap">女性専用ジム</span>
   </a>
   <div class="links">
     <a href="#about">特長</a>
     <a href="#program">プログラム</a>
-    <a href="#voice">お客様の声</a>
+    <a href="#voice">メディア</a>
     <a href="#price">料金</a>
     <a href="#faq">FAQ</a>
   </div>
-  <a href="https://page.line.me/makespace?openQrModal=true" target="_blank" class="nav-cta">無料カウンセリング予約</a>
+  <a href="https://page.line.me/makespace?openQrModal=true" target="_blank" class="nav-cta">見学・体験を予約</a>
 </nav>
 
 <!-- HERO -->
@@ -356,53 +404,54 @@ section{position:relative}
         <span class="dot"></span>
         女性専用フィットネスジム
         <span class="dot"></span>
-        佐賀駅北口 徒歩3分
+        佐賀駅北口 徒歩1分
       </div>
       <div class="free-badge">
-        <div class="yen">初月¥0</div>
-        <div class="sub"><strong>初月0円キャンペーン実施中</strong>入会金・事務手数料も¥0</div>
+        <div class="yen">0円</div>
+        <div class="sub"><strong>入会キャンペーン実施中（先着20名）</strong>入会金・事務手数料・カード発行手数料</div>
       </div>
       <h1 class="hero-title">
-        夏までに、<br>
-        <span class="accent">体を変える。</span>
+        好きな服を、<br>
+        <span class="accent">もっと楽しむ<br class="sp-br">私へ。</span>
       </h1>
       <p class="hero-lead">
-        パーソナルトレーニング・骨盤矯正まで。<br>
-        女性トレーナーが、あなただけのプログラムで導く<br>
-        完全プライベートのフィットネスジムです。
+        佐賀駅北口から徒歩1分。<br>
+        女性のための、女性による小さなフィットネスジムです。<br>
+        1回約40分。月に1回、トレーナーがあなた用のメニューを作ります。
       </p>
       <div class="hero-tags">
-        <span class="hero-tag-pill">完全女性専用</span>
-        <span class="hero-tag-pill">プライベート空間</span>
-        <span class="hero-tag-pill">運動初心者OK</span>
-        <span class="hero-tag-pill">違約金なし</span>
+        <span class="hero-tag-pill">女性専用</span>
+        <span class="hero-tag-pill">佐賀駅北口 徒歩1分</span>
+        <span class="hero-tag-pill">24時間OK（オールプラン）</span>
+        <span class="hero-tag-pill">運動が初めての方が中心</span>
       </div>
       <div class="hero-ctas">
-        <a href="#price" class="btn btn-primary btn-lg">初月0円で入会する <span class="arrow">→</span></a>
-        <a href="#program" class="btn btn-ghost">プログラムを見る</a>
+        <a href="https://page.line.me/makespace?openQrModal=true" target="_blank" class="btn btn-primary btn-lg">無料で見学・体験を予約する <span class="arrow">→</span></a>
+        <a href="#price" class="btn btn-ghost">料金を見る</a>
       </div>
+      <p class="hero-reassure">見学だけでもOK / LINEなら24時間いつでも予約できます</p>
       <div class="hero-stats">
         <div class="hstat">
-          <div class="hstat-num">92<small>%</small></div>
-          <div class="hstat-lbl">継続率</div>
+          <div class="hstat-num">1<small>分</small></div>
+          <div class="hstat-lbl">佐賀駅北口から徒歩</div>
         </div>
         <div class="hstat">
-          <div class="hstat-num">−4.8<small>kg</small></div>
-          <div class="hstat-lbl">3ヶ月平均体重変化</div>
+          <div class="hstat-num">24<small>時間</small></div>
+          <div class="hstat-lbl">オールプランで利用可</div>
         </div>
         <div class="hstat">
-          <div class="hstat-num">70<small>%以上</small></div>
-          <div class="hstat-lbl">運動初心者スタート</div>
+          <div class="hstat-num">約40<small>分</small></div>
+          <div class="hstat-lbl">1回のトレーニング</div>
         </div>
       </div>
     </div>
     <div style="position:relative" class="reveal">
       <div class="hero-visual">
-        <img src="images/hero_new.png" alt="Make & Space 女性専用フィットネスジム">
+        <img src="images/hero_gym.jpg" alt="Make & Space 女性専用フィットネスジムの店内（トレッドミル）">
       </div>
       <div class="hero-stat-card">
-        <div class="num">¥0<small>初月の月会費</small></div>
-        <div class="lbl">通常 ¥8,480 / 月</div>
+        <div class="num">0円<small>入会時の手数料</small></div>
+        <div class="lbl">通常 合計9,900円 / 先着20名</div>
       </div>
     </div>
   </div>
@@ -417,8 +466,8 @@ section{position:relative}
           <svg viewBox="0 0 24 24"><path d="M6 4v16M18 4v16M6 12h12"/></svg>
         </div>
         <div>
-          <div class="mi-title">パーソナルトレーニング</div>
-          <div class="mi-desc">女性専門トレーナーによる完全個別指導 / 50分</div>
+          <div class="mi-title">女性向け 約40分のトレーニング</div>
+          <div class="mi-desc">月1回、トレーナーがメニューを作成・マシンの使い方も説明（要予約）</div>
         </div>
       </div>
       <div class="menu-item">
@@ -426,8 +475,8 @@ section{position:relative}
           <svg viewBox="0 0 24 24"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
         </div>
         <div>
-          <div class="mi-title">骨盤矯正・ストレッチ</div>
-          <div class="mi-desc">姿勢改善・産後ケア・腰痛・肩こり / 30〜40分</div>
+          <div class="mi-title">パーソナルジム・整体を併設</div>
+          <div class="mi-desc">パーソナルトレーニングやコンディショニング整体で、体のメンテナンスも</div>
         </div>
       </div>
     </div>
@@ -437,21 +486,21 @@ section{position:relative}
 <!-- SCARCITY STRIP -->
 <div class="scarcity-strip">
   <div class="scarcity-track">
-    <span>初月¥0 キャンペーン中</span>
+    <span>入会手数料0円 キャンペーン中</span>
+    <span>先着20名限定</span>
     <span>女性専用フィットネスジム</span>
-    <span>パーソナルトレーニング</span>
-    <span>骨盤矯正・ストレッチ</span>
-    <span>佐賀駅北口 徒歩3分</span>
-    <span>初月¥0 キャンペーン中</span>
+    <span>24時間使えるオールプラン</span>
+    <span>佐賀駅北口 徒歩1分</span>
+    <span>入会手数料0円 キャンペーン中</span>
+    <span>先着20名限定</span>
     <span>女性専用フィットネスジム</span>
-    <span>パーソナルトレーニング</span>
-    <span>骨盤矯正・ストレッチ</span>
-    <span>佐賀駅北口 徒歩3分</span>
-    <span>初月¥0 キャンペーン中</span>
+    <span>24時間使えるオールプラン</span>
+    <span>佐賀駅北口 徒歩1分</span>
+    <span>入会手数料0円 キャンペーン中</span>
+    <span>先着20名限定</span>
     <span>女性専用フィットネスジム</span>
-    <span>パーソナルトレーニング</span>
-    <span>骨盤矯正・ストレッチ</span>
-    <span>佐賀駅北口 徒歩3分</span>
+    <span>24時間使えるオールプラン</span>
+    <span>佐賀駅北口 徒歩1分</span>
   </div>
 </div>
 
@@ -460,20 +509,20 @@ section{position:relative}
   <div class="wrap">
     <div class="results-grid reveal">
       <div class="result-item">
-        <div class="result-num">300<small>名以上</small></div>
-        <div class="result-lbl">累計会員数</div>
+        <div class="result-num">1<small>分</small></div>
+        <div class="result-lbl">佐賀駅北口から徒歩</div>
       </div>
       <div class="result-item">
-        <div class="result-num">92<small>%</small></div>
-        <div class="result-lbl">3ヶ月継続率</div>
+        <div class="result-num">24<small>h</small></div>
+        <div class="result-lbl">オールプランで利用可</div>
       </div>
       <div class="result-item">
-        <div class="result-num">−4.8<small>kg</small></div>
-        <div class="result-lbl">3ヶ月平均体重変化</div>
+        <div class="result-num">約40<small>分</small></div>
+        <div class="result-lbl">1回のトレーニング</div>
       </div>
       <div class="result-item">
-        <div class="result-num">★4.9</div>
-        <div class="result-lbl">Google クチコミ評価</div>
+        <div class="result-num">月1<small>回</small></div>
+        <div class="result-lbl">メニュー作成サポート</div>
       </div>
     </div>
   </div>
@@ -484,24 +533,25 @@ section{position:relative}
   <div class="wrap">
     <div class="campaign-card reveal">
       <div>
-        <div class="campaign-eyebrow">FIRST MONTH FREE — 初月0円キャンペーン</div>
+        <div class="campaign-eyebrow">CAMPAIGN — 入会キャンペーン実施中</div>
         <h2 class="campaign-title">
-          フィットネスを、<br>まず試してみる。
-          <div class="free">¥0<small>初月の月会費</small></div>
+          入会時の手数料が、<br>まるごと0円。
+          <div class="free">0円<small>通常 合計9,900円</small></div>
         </h2>
         <p class="campaign-note">
-          通常¥8,480 / 月の月会費が、初月は完全無料。<br>
-          「合わなければ初月で終わり」でも大丈夫です。<br>
-          まずは1ヶ月、試してみてください。
+          入会金・事務手数料・カード発行手数料が0円になります。<br>
+          新規入会の方が対象。先着20名に達し次第終了します。<br>
+          まずは無料の見学・体験で、雰囲気を確かめてください。
         </p>
-        <a href="https://page.line.me/makespace?openQrModal=true" target="_blank" class="btn btn-primary" style="padding:18px 32px">今すぐ無料カウンセリングを予約 <span class="arrow">→</span></a>
+        <a href="https://page.line.me/makespace?openQrModal=true" target="_blank" class="btn btn-primary" style="padding:18px 32px">無料で見学・体験を予約する <span class="arrow">→</span></a>
       </div>
       <div>
         <div style="font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:rgba(255,255,255,.4);margin-bottom:16px">CAMPAIGN CONTENTS —</div>
         <ul class="campaign-perks">
-          <li>初月月会費 ¥0（通常¥8,480）</li>
-          <li>女性トレーナーによる無料カウンセリング1回</li>
-          <li>いつでも退会OK・違約金なし</li>
+          <li>入会金 5,500円 → 0円</li>
+          <li>事務手数料 3,300円 → 0円</li>
+          <li>カード発行手数料 1,100円 → 0円</li>
+          <li>先着20名限定（新規入会の方）</li>
         </ul>
       </div>
     </div>
@@ -514,7 +564,7 @@ section{position:relative}
     <div class="reveal">
       <div class="eyebrow">WHY MAKE &amp; SPACE</div>
       <h2 class="section-title">他のジムと、ここが違う。</h2>
-      <p class="section-sub">続けられないジムに、何度か通った経験はありませんか。<br>Make &amp; Space は「続けやすい」を最優先に設計したジムです。</p>
+      <p class="section-sub">「ダイエットを始めたいのに、なかなか始められない」<br>「動画を見て始めたけど、成果が出ない」——そんな方にこそ。</p>
     </div>
     <div class="reasons">
       <div class="reason reveal">
@@ -522,24 +572,24 @@ section{position:relative}
         <div class="icon">
           <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/></svg>
         </div>
-        <h3>会員は<br>すべて女性。</h3>
-        <p>女性会員だけのプライベート空間。化粧を落として、汗をかける。「見られているかも」という緊張ゼロで、本気のトレーニングができます。</p>
+        <h3>女性のための、<br>女性によるジム。</h3>
+        <p>女性専用の小さなジムです。人の目を気にせず、自分のペースで体を動かせます。運動が初めての方がほとんどなので、安心して始められます。</p>
       </div>
       <div class="reason reveal">
         <div class="num">REASON / 02</div>
         <div class="icon">
           <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 12l2 2 4-4"/></svg>
         </div>
-        <h3>あなた専用の<br>トレーニングプログラム。</h3>
-        <p>体重・体脂肪・姿勢・生活習慣まで丁寧にヒアリング。「なんとなくマシン」ではなく、目標から逆算したプログラムで確実に結果を出します。</p>
+        <h3>毎月、トレーナーが<br>メニューを作成。</h3>
+        <p>ほかのフィットネスジムと違い、月に1回トレーナーがあなたの1ヶ月分のメニューを作り、マシンの使い方も説明します（要予約）。「何をすればいいかわからない」がなくなります。</p>
       </div>
       <div class="reason reveal">
         <div class="num">REASON / 03</div>
         <div class="icon">
           <svg viewBox="0 0 24 24"><path d="M3 12h4l2-6 4 12 2-6h6"/></svg>
         </div>
-        <h3>プライベートで静かな、<br>集中できる空間。</h3>
-        <p>完全少人数制・予約制。混雑なし、待ち時間なし。照明・音楽にもこだわった落ち着いた空間で、週2〜3回自然と通えるようになります。</p>
+        <h3>駅から1分。<br>24時間通える。</h3>
+        <p>佐賀駅北口から徒歩1分。オールプランなら24時間いつでも、デイプランなら平日9:00〜17:00に利用できます。仕事の前後や空いた時間に、気軽に寄れます。</p>
       </div>
     </div>
   </div>
@@ -550,119 +600,88 @@ section{position:relative}
   <div class="wrap">
     <div class="reveal">
       <div class="eyebrow">PROGRAMS</div>
-      <h2 class="section-title">目的別に選べる、<br>4つのトレーニングメニュー。</h2>
-      <p class="section-sub">ダイエット・引き締め・産後ケア・姿勢改善まで。<br>どんな目標にも、専門プログラムがあります。</p>
+      <h2 class="section-title">女性に特化した、<br>約40分のトレーニング。</h2>
+      <p class="section-sub">月に1回、トレーナーが1ヶ月分のメニューを作成。<br>パーソナルジムとコンディショニング整体も併設しています。</p>
     </div>
     <div class="programs-grid">
       <div class="program md reveal">
         <div class="ph">
-          <img src="images/program_1.png" alt="パーソナルトレーニング">
-          <span class="tag">[ パーソナル / 50min ]</span>
+          <img src="images/program-3.png" alt="店内のマシンとトレッドミル">
+          <span class="tag">[ フィットネス / 約40分 ]</span>
         </div>
         <div class="body">
           <div class="prog-tags">
             <span class="prog-tag">ダイエット</span>
-            <span class="prog-tag">引き締め</span>
-            <span class="prog-tag">姿勢改善</span>
+            <span class="prog-tag">運動不足解消</span>
+            <span class="prog-tag">初めての方</span>
           </div>
-          <h4>パーソナルトレーニング</h4>
-          <p>筋トレ・有酸素・ストレッチを組み合わせた完全個別プログラム。体組成・姿勢・生活習慣まで分析し、50分で最大限の効果を出します。初回無料カウンセリング付き。</p>
+          <h4>女性向け 約40分のメニュー</h4>
+          <p>月に1回、トレーナーがあなたの1ヶ月分のメニューを作り、マシンの使い方も説明します（要予約）。あとはメニューに沿って、自分のペースで通うだけ。</p>
         </div>
       </div>
-      <div class="program sm reveal">
+      <div class="program md reveal">
         <div class="ph">
-          <img src="images/program-3.png" alt="40分集中プログラム">
-          <span class="tag">[ 40分集中 ]</span>
+          <img src="images/program_1.png" alt="店内の設備">
+          <span class="tag">[ 設備 ]</span>
         </div>
         <div class="body">
           <div class="prog-tags">
-            <span class="prog-tag">時短</span>
-            <span class="prog-tag">全身</span>
+            <span class="prog-tag">有酸素</span>
+            <span class="prog-tag">筋トレ</span>
+            <span class="prog-tag">ストレッチ</span>
           </div>
-          <h4>40分集中プログラム</h4>
-          <p>忙しい女性向けの時短コース。通勤前後・昼休みにも通えます。</p>
+          <h4>マシン・設備</h4>
+          <p>トレッドミル3台・バイク2台・下半身マシン3台・上半身マシン2台・腹筋マシン1台・ストレッチコーナー。</p>
         </div>
       </div>
-      <div class="program sm reveal">
+      <div class="program md reveal">
         <div class="ph">
-          <img src="images/about-2.jpg" alt="ストレッチ整体">
-          <span class="tag">[ ストレッチ整体 / 40min ]</span>
+          <img src="images/about-1.png" alt="併設のパーソナルジム">
+          <span class="tag">[ 併設 ]</span>
         </div>
         <div class="body">
           <div class="prog-tags">
-            <span class="prog-tag">肩こり</span>
-            <span class="prog-tag">腰痛</span>
+            <span class="prog-tag">マンツーマン</span>
           </div>
-          <h4>ストレッチ整体</h4>
-          <p>専門的な手技で、肩こり・腰痛・疲れをリリース。姿勢改善にも効果的です。</p>
+          <h4>パーソナルジム</h4>
+          <p>トレーナーとマンツーマンで取り組みたい方は、併設のパーソナルジムもご相談ください。</p>
         </div>
       </div>
-      <div class="program sm reveal">
+      <div class="program md reveal">
         <div class="ph">
-          <img src="images/about-1.png" alt="骨盤矯正">
-          <span class="tag">[ 骨盤矯正 / 30min ]</span>
+          <img src="images/stretch_care.png" alt="コンディショニング整体のイメージ">
+          <span class="tag">[ 併設 / 写真はイメージ ]</span>
         </div>
         <div class="body">
           <div class="prog-tags">
-            <span class="prog-tag">産後ケア</span>
-            <span class="prog-tag">骨盤</span>
+            <span class="prog-tag">姿勢</span>
+            <span class="prog-tag">腰痛・肩こり</span>
           </div>
-          <h4>骨盤矯正</h4>
-          <p>産後・歪みが気になる方に。骨盤から整え、毎日が楽になります。</p>
+          <h4>コンディショニング整体</h4>
+          <p>姿勢の悪さや腰痛・肩こりが気になる方は、併設の整体で体のメンテナンスも。</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- VOICES -->
+<!-- MEDIA / REVIEWS -->
 <section class="section-pad" id="voice">
   <div class="wrap">
-    <div class="reveal">
-      <div class="eyebrow">MEMBERS VOICE</div>
-      <h2 class="section-title">通っている方の、リアルな声。</h2>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:48px;align-items:center">
-        <img src="images/badge-1.png" alt="Google評価" style="height:48px;width:auto">
-        <img src="images/badge-2.png" alt="評価バッジ" style="height:48px;width:auto">
-        <img src="images/badge-3.png" alt="評価バッジ" style="height:48px;width:auto">
-      </div>
-    </div>
-    <div class="voices">
-      <div class="voice reveal">
-        <div class="result-chip">▼ ウエスト −8cm / 2ヶ月</div>
-        <div class="stars">★★★★★</div>
-        <p class="quote">「他のジムは続いたことがなかったのに、ここだけは7ヶ月通い続けています。トレーナーさんが毎回体調に合わせてメニューを変えてくれるので、無理なく続けられます。」</p>
-        <div class="meta">
-          <img class="avatar" src="images/voice_1.png" alt="Y.Tさん">
-          <div class="who">
-            <div class="name">Y.Tさん</div>
-            <div class="desc">42 / 会社員 / 入会7ヶ月</div>
-          </div>
+    <div class="media-grid reveal">
+      <div>
+        <div class="eyebrow">MEDIA</div>
+        <h2 class="section-title">メディア出演・<br>取材多数。</h2>
+        <p class="section-sub" style="margin-bottom:28px">女性にやさしいジムとして、番組の特集や取材を数多く受けています。</p>
+        <div class="badges">
+          <img src="images/badge-1.png" alt="佐賀市パーソナルジム口コミ数No.1">
+          <img src="images/badge-2.png" alt="佐賀県パーソナルジム口コミ数No.1">
+          <img src="images/badge-3.png" alt="佐賀市女性メインのパーソナルジム口コミ数No.1">
         </div>
+        <p class="badge-note">※併設のパーソナルジムの口コミ数。2022年6月時点・Google口コミ当社調べ</p>
       </div>
-      <div class="voice reveal">
-        <div class="result-chip">▼ 体重 −5.2kg / 3ヶ月</div>
-        <div class="stars">★★★★★</div>
-        <p class="quote">「産後に骨盤矯正から始めて、今はパーソナルトレーニングも受けています。女性専用なので子連れでも気を使わず通えるのが本当に助かっています。」</p>
-        <div class="meta">
-          <img class="avatar" src="images/voice_2.png" alt="H.Kさん">
-          <div class="who">
-            <div class="name">H.Kさん</div>
-            <div class="desc">35 / 主婦 / 入会1年</div>
-          </div>
-        </div>
-      </div>
-      <div class="voice reveal">
-        <div class="result-chip">▼ 体脂肪率 −6% / 4ヶ月</div>
-        <div class="stars">★★★★★</div>
-        <p class="quote">「仕事帰りに化粧を落として通えるのが最高です。プライベート空間なので人目が気にならず、本気でトレーニングできます。仕事後のルーティンになりました。」</p>
-        <div class="meta">
-          <img class="avatar" src="images/voice_3.png" alt="M.Sさん">
-          <div class="who">
-            <div class="name">M.Sさん</div>
-            <div class="desc">29 / 看護師 / 入会1年</div>
-          </div>
-        </div>
+      <div class="media-photo">
+        <img src="images/about-2.jpg" alt="テレビ取材の様子">
       </div>
     </div>
   </div>
@@ -673,73 +692,94 @@ section{position:relative}
   <div class="wrap">
     <div class="reveal">
       <div class="eyebrow">HOW TO START</div>
-      <h2 class="section-title">入会まで、たった4ステップ。<br>最短で翌日からトレーニング開始。</h2>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:40px;border-radius:8px;overflow:hidden">
-        <img src="images/reserve-1.jpg" alt="カウンセリングの様子" style="width:100%;height:200px;object-fit:cover">
-        <img src="images/reserve-2.jpg" alt="体験トレーニング" style="width:100%;height:200px;object-fit:cover">
+      <h2 class="section-title">ご予約から入会まで、<br>4つのステップ。</h2>
+      <div style="margin-bottom:40px;border-radius:8px;overflow:hidden">
+        <img src="images/reserve-2.jpg" alt="店内の様子" style="width:100%;height:260px;object-fit:cover">
       </div>
     </div>
     <div class="flow">
       <div class="flow-step reveal">
         <div class="num">STEP 01</div>
-        <h4>電話 / LINE予約</h4>
-        <p>気になったらすぐご連絡を。電話（9〜21時）またはLINEで24時間受付しています。</p>
+        <h4>LINE・電話でご予約</h4>
+        <p>接客中は電話に出られないことがあるため、LINEでのご予約がおすすめです。</p>
       </div>
       <div class="flow-step reveal">
         <div class="num">STEP 02</div>
-        <h4>無料カウンセリング</h4>
-        <p>目標・体力レベル・生活習慣を丁寧にヒアリング。完全無料です。</p>
+        <h4>ご来店・ご説明</h4>
+        <p>店内をご案内し、プランやマシンについてご説明します。無料の見学・体験も受け付けています。</p>
       </div>
       <div class="flow-step reveal">
         <div class="num">STEP 03</div>
-        <h4>体験トレーニング</h4>
-        <p>実際の40分セッションを体感。「続けられそう」と感じてからご入会ください。</p>
+        <h4>お申し込み</h4>
+        <p>申込書のご記入と、口座・クレジットカード振替のお手続きをします。</p>
       </div>
       <div class="flow-step reveal">
         <div class="num">STEP 04</div>
-        <h4>ご入会 &amp; スタート</h4>
-        <p>翌日からトレーニング開始。初月は月会費¥0でリスクなく始められます。</p>
+        <h4>次回のご来店からスタート</h4>
+        <p>トレーナーが作ったメニューで、トレーニングを始めましょう。</p>
       </div>
+    </div>
+    <div class="bring reveal">
+      <strong>ご入会に必要なもの</strong>
+      <span>① クレジットカードまたはキャッシュカード</span>
+      <span>② 本人確認ができるもの（運転免許証など）</span>
     </div>
   </div>
 </section>
 
 <!-- PRICING -->
 <section class="section-pad" id="price" style="background:var(--bg-2)">
-  <div class="wrap-narrow">
+  <div class="wrap">
     <div class="reveal" style="text-align:center">
       <div class="eyebrow" style="justify-content:center;display:inline-flex">PRICING</div>
-      <h2 class="section-title">迷うなら、まず初月0円で<br>体験してください。</h2>
-      <p class="section-sub" style="margin:0 auto 52px;text-align:center">合わなければ初月で退会OK。違約金は一切ありません。</p>
+      <h2 class="section-title">料金プラン</h2>
+      <p class="section-sub" style="margin:0 auto 40px;text-align:center">入会キャンペーン中は、入会時の手数料がすべて0円（先着20名）。</p>
     </div>
-    <div class="pricing-wrap reveal">
-      <div class="price-head">
-        <div>
-          <div class="badge">★ 初月0円キャンペーン</div>
-          <h3>スタンダードプラン</h3>
-          <div style="color:var(--ink-soft);font-size:13px;font-family:var(--mono);letter-spacing:.04em;margin-top:6px">通い放題 / 全プログラム利用可能</div>
-        </div>
-        <div class="price-display">
-          <div class="strike">通常 ¥8,480 / 月</div>
-          <div class="now">¥0<small>初月のみ</small></div>
-          <div style="font-size:12px;color:var(--ink-soft);margin-top:6px;font-family:var(--mono);letter-spacing:.04em">2ヶ月目以降 ¥8,480 / 月</div>
-        </div>
-      </div>
-      <ul class="price-features">
-        <li><span style="text-decoration:line-through;color:var(--ink-mute)">入会金 ¥5,500</span> → <strong style="color:var(--accent-deep)">キャンペーン期間中 ¥0</strong></li>
-        <li><span style="text-decoration:line-through;color:var(--ink-mute)">事務手数料 ¥3,300</span> → <strong style="color:var(--accent-deep)">キャンペーン期間中 ¥0</strong></li>
-        <li>パーソナルトレーニング 通い放題</li>
-        <li>骨盤矯正・ストレッチ 利用可能</li>
-        <li>女性専門トレーナーによる月次プログラム</li>
-        <li>いつでも休会・退会OK / 違約金なし</li>
+    <div class="fee-box reveal">
+      <div class="fee-badge">入会キャンペーン</div>
+      <ul class="fee-list">
+        <li><span>入会金</span><s>5,500円</s></li>
+        <li><span>事務手数料</span><s>3,300円</s></li>
+        <li><span>カード発行手数料</span><s>1,100円</s></li>
       </ul>
-      <div class="price-cta">
-        <a href="tel:0952322135" class="btn btn-primary" style="font-size:18px;padding:72px 44px">今すぐ電話で予約する <span class="arrow">→</span></a>
-        <a href="https://page.line.me/makespace?openQrModal=true" target="_blank" class="line-btn"><img src="images/line_cta.png" alt="LINEで予約する"></a>
+      <div class="fee-zero"><small>合計9,900円 →</small>0<small>円</small></div>
+      <p class="fee-note">※新規入会の方が対象。先着20名に達し次第終了します。</p>
+    </div>
+    <div class="plans">
+      <div class="plan-card reveal">
+        <div class="plan-name">通常プラン</div>
+        <div class="plan-time">&nbsp;</div>
+        <div class="plan-price"><small>月額</small>8,480<small>円（税込）</small></div>
+        <ul>
+          <li>月1回のメニュー作成・マシンの使い方説明（要予約）</li>
+        </ul>
       </div>
-      <div style="margin-top:16px;font-family:var(--mono);font-size:11px;color:var(--ink-mute);letter-spacing:.04em">
-        ※ TEL 0952-32-2135（9:00〜21:00）/ LINE は24時間受付 / 当日中に折り返しご連絡します
+      <div class="plan-card featured reveal">
+        <div class="plan-flag">24時間使える</div>
+        <div class="plan-name">オールプラン</div>
+        <div class="plan-time">24時間利用可能</div>
+        <div class="plan-price"><small>月額</small>6,800<small>円（税込）</small></div>
+        <ul>
+          <li>月1回のメニュー作成・マシンの使い方説明（要予約）</li>
+          <li class="cond">6ヶ月継続条件</li>
+        </ul>
       </div>
+      <div class="plan-card reveal">
+        <div class="plan-name">デイプラン</div>
+        <div class="plan-time">平日 9:00〜17:00 利用可能</div>
+        <div class="plan-price"><small>月額</small>5,800<small>円（税込）</small></div>
+        <ul>
+          <li>月1回のメニュー作成・マシンの使い方説明（要予約）</li>
+          <li class="cond">6ヶ月継続条件</li>
+        </ul>
+      </div>
+    </div>
+    <div class="price-cta reveal" style="justify-content:center;margin-top:40px">
+      <a href="https://page.line.me/makespace?openQrModal=true" target="_blank" class="line-btn"><img src="images/line_cta.png" alt="LINEで予約する"></a>
+      <a href="tel:0952322135" class="btn btn-primary" style="font-size:16px;padding:20px 40px">電話で予約する <span class="arrow">→</span></a>
+    </div>
+    <div style="margin-top:16px;text-align:center;font-family:var(--mono);font-size:11px;color:var(--ink-mute);letter-spacing:.04em">
+      ※ TEL 0952-32-2135 / 接客中は電話に出られないことがあります。LINEでのご予約がおすすめです。
     </div>
   </div>
 </section>
@@ -750,32 +790,32 @@ section{position:relative}
     <div class="reveal" style="text-align:center">
       <div class="eyebrow" style="display:inline-flex">FAQ</div>
       <h2 class="section-title">よくあるご質問。</h2>
-      <p class="section-sub" style="margin:0 auto 52px;text-align:center">入会前の不安を、すべて解消します。</p>
+      <p class="section-sub" style="margin:0 auto 52px;text-align:center">入会前に気になることにお答えします。</p>
     </div>
     <div class="faq reveal">
       <details class="faq-item">
-        <summary>本当に初月は0円ですか？他に費用はかかりますか？</summary>
-        <div class="answer">初月0円キャンペーン期間中は、月会費の初月が¥0になるのはもちろん、通常かかる入会金（¥5,500）・事務手数料（¥3,300）もすべて¥0です。2ヶ月目以降は月会費¥8,480のみ。詳しくはご来店時にご説明いたします。</div>
+        <summary>入会時にかかる費用はいくらですか？</summary>
+        <div class="answer">通常は入会金5,500円・事務手数料3,300円・カード発行手数料1,100円（合計9,900円）がかかりますが、入会キャンペーン中はすべて0円です（新規入会の方・先着20名）。このほかに、選んだプランの月会費がかかります。</div>
+      </details>
+      <details class="faq-item">
+        <summary>プランはどう選べばいいですか？</summary>
+        <div class="answer">いつでも通いたい方は24時間使えるオールプラン（月額6,800円・税込）、平日の日中に通う方はデイプラン（平日9:00〜17:00・月額5,800円・税込）がおすすめです。オールプランとデイプランは6ヶ月継続が条件です。通常プランは月額8,480円（税込）です。</div>
       </details>
       <details class="faq-item">
         <summary>運動が初めて・久しぶりでも大丈夫ですか？</summary>
-        <div class="answer">大丈夫です。会員様の約7割が運動初心者・ブランクありの方です。カウンセリングで体力・体調・目標を丁寧にヒアリングした上で、無理のないプログラムを作成します。いきなりきつい運動はしません。</div>
+        <div class="answer">大丈夫です。運動が初めての方がほとんどです。月に1回トレーナーがあなた用のメニューを作り、マシンの使い方もご説明します（要予約）。</div>
       </details>
       <details class="faq-item">
-        <summary>途中で解約・退会はできますか？</summary>
-        <div class="answer">いつでも退会できます。違約金・解約金は一切いただきません。「試しに1ヶ月だけ」という方も大歓迎です。</div>
+        <summary>見学や体験はできますか？</summary>
+        <div class="answer">はい、無料で見学・体験を受け付けています。LINEまたはお電話でご予約ください。</div>
       </details>
       <details class="faq-item">
-        <summary>子連れで利用できますか？</summary>
-        <div class="answer">はい、子連れ大歓迎です。産後ケアでいらっしゃるママさんも多く、アットホームな雰囲気なので安心してご利用いただけます。</div>
+        <summary>入会に必要なものは？</summary>
+        <div class="answer">クレジットカードまたはキャッシュカードと、本人確認ができるもの（運転免許証など）をお持ちください。</div>
       </details>
       <details class="faq-item">
-        <summary>何を着ていけばいいですか？</summary>
-        <div class="answer">運動しやすい服装でお越しください。また、室内用の運動靴もご持参いただけると安心です。</div>
-      </details>
-      <details class="faq-item">
-        <summary>どんなトレーニング機器がありますか？</summary>
-        <div class="answer">パーソナルトレーニング用のフリーウエイト・マシン、有酸素系マシン（トレッドミル・バイクなど）を揃えています。女性の体に合わせた設備です。</div>
+        <summary>どんなマシンがありますか？</summary>
+        <div class="answer">トレッドミル3台・バイク2台・下半身マシン3台・上半身マシン2台・腹筋マシン1台と、ストレッチコーナーがあります。</div>
       </details>
     </div>
   </div>
@@ -784,18 +824,18 @@ section{position:relative}
 <!-- FINAL CTA -->
 <section class="final-cta" id="cta">
   <div class="wrap-narrow reveal" style="position:relative">
-    <div class="eyebrow">FIRST MONTH FREE — 初月¥0</div>
-    <h2>今こそ、<br>本気で体を変えよう。</h2>
-    <p>パーソナルトレーニング・骨盤矯正まで揃った<br>佐賀で唯一の完全女性専用フィットネスジム。<br>まずは初月0円で試してください。</p>
+    <div class="eyebrow">CAMPAIGN — 先着20名</div>
+    <h2>好きな服を、<br>もっと楽しむ私へ。</h2>
+    <p>佐賀駅北口から徒歩1分の、女性専用フィットネスジム。<br>入会キャンペーン中は、入会時の手数料が0円です。</p>
     <div class="price-display">
-      <div class="strike">通常 ¥8,480 / 月</div>
-      <div class="now">¥0<small>初月のみ</small></div>
+      <div class="strike">入会金・事務手数料・カード発行手数料 合計9,900円</div>
+      <div class="now">0<small>円</small></div>
     </div>
     <a href="https://page.line.me/makespace?openQrModal=true" target="_blank" class="btn btn-primary btn-lg">
-      初月0円で無料カウンセリングを予約する <span class="arrow">→</span>
+      無料で見学・体験を予約する <span class="arrow">→</span>
     </a>
     <p style="margin-top:20px;font-size:12px;color:rgba(255,255,255,.4);font-family:var(--mono);letter-spacing:.1em">
-      TEL 0952-32-2135（9:00〜21:00）/ LINE 24時間受付
+      TEL 0952-32-2135 / LINEなら24時間いつでも予約できます
     </p>
   </div>
 </section>
@@ -809,10 +849,10 @@ section{position:relative}
       <div class="access-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;margin-bottom:32px">
         <div style="font-family:var(--mono);font-size:13px;letter-spacing:.08em;line-height:2.2;color:var(--ink-soft)">
           <div style="font-family:var(--serif);font-size:20px;color:var(--ink);margin-bottom:16px;letter-spacing:.06em">Make &amp; Space</div>
-          <div>📍 佐賀県佐賀市駅前中央2丁目1-1 北口ビル1F</div>
-          <div>🚉 JR佐賀駅 北口より徒歩<strong style="color:var(--accent-deep)">3分</strong></div>
+          <div>📍 佐賀県佐賀市駅前中央2丁目1-1 北口ビル1階</div>
+          <div>🚉 佐賀駅北口より徒歩<strong style="color:var(--accent-deep)">1分</strong>（カットショップ和跡と並び）</div>
           <div>📞 <a href="tel:0952322135" style="color:var(--accent-deep);text-decoration:none">0952-32-2135</a></div>
-          <div>🕐 9:00〜21:00（年中無休）</div>
+          <div>🕐 オールプラン 24時間 / デイプラン 平日9:00〜17:00</div>
           <div style="margin-top:20px">
             <a href="https://page.line.me/makespace?openQrModal=true" target="_blank" class="line-btn">
               <img src="images/line_cta.png" alt="LINEで予約する">
@@ -840,14 +880,14 @@ section{position:relative}
   <div class="wrap">
     <div class="row">
       <div>
-        <img src="images/logo.png" alt="Make & Space" style="height:34px;width:auto;margin-bottom:10px">
+        <img src="images/logo-2.png" alt="Make & Space" style="height:34px;width:auto;margin-bottom:10px">
         <div style="font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:var(--ink-mute);margin-bottom:14px">女性専用フィットネスジム — SAGA</div>
       </div>
       <div class="info">
-        <div>OPEN — 9:00 〜 21:00（年中無休）</div>
+        <div>HOURS — オールプラン24時間 / デイプラン平日9:00〜17:00</div>
         <div>TEL — 0952-32-2135</div>
-        <div>ADDRESS — 佐賀県佐賀市駅前中央2丁目1-1 北口ビル1F</div>
-        <div>ACCESS — JR佐賀駅 北口より徒歩3分</div>
+        <div>ADDRESS — 佐賀県佐賀市駅前中央2丁目1-1 北口ビル1階</div>
+        <div>ACCESS — 佐賀駅北口より徒歩1分</div>
         <div style="margin-top:8px"><a href="https://saga-ms.com/fitness/" style="color:var(--accent-deep);text-decoration:none">公式サイト → saga-ms.com/fitness</a></div>
       </div>
     </div>
@@ -858,12 +898,12 @@ section{position:relative}
 <!-- STICKY CTA -->
 <div class="sticky-cta" id="sticky">
   <div class="info">
-    <span class="free-mini">初月¥0</span>
-    <span class="desc">女性専用フィットネスジム</span>
-    <span class="spots-mini">佐賀駅北口 徒歩3分</span>
+    <span class="free-mini">手数料0円</span>
+    <span class="desc">入会キャンペーン 先着20名</span>
+    <span class="spots-mini">佐賀駅北口 徒歩1分</span>
   </div>
   <div style="display:flex;gap:10px;align-items:center">
-    <a href="tel:0952322135" class="btn btn-primary">今すぐ電話予約 →</a>
+    <a href="tel:0952322135" class="btn btn-primary">電話で予約 →</a>
     <a href="https://page.line.me/makespace?openQrModal=true" target="_blank" class="line-btn"><img src="images/line_cta.png" alt="LINEで予約する"></a>
   </div>
 </div>
