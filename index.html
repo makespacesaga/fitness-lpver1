@@ -639,8 +639,7 @@ footer a{color:#f3c9c3}
 // LINEはパーソナルジムと同じ窓口なので、フィットネスからの問い合わせだとお店で分かるようにする（2026-11-14 実機で動作確認）
 (function(){
   if (!/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) return;
-  var text = '女性専用フィットネスの見学を希望します。
-希望の日時：';
+  var text = '女性専用フィットネスの見学を希望します。\n希望の日時：';
   var url = 'https://line.me/R/oaMessage/%40makespace/?' + encodeURIComponent(text);
   document.querySelectorAll('a[href*="page.line.me/makespace"]').forEach(function(a){ a.href = url; });
 })();
