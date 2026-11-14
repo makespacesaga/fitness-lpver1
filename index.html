@@ -635,6 +635,16 @@ footer a{color:#f3c9c3}
   document.querySelectorAll('[data-track]').forEach(function(s){ io.observe(s); });
 })();
 
+// スマホのLINEボタン：文章が入った状態でトークを開く（PCは非対応のためプロフィールページのまま）
+// LINEはパーソナルジムと同じ窓口なので、フィットネスからの問い合わせだとお店で分かるようにする（2026-11-14 実機で動作確認）
+(function(){
+  if (!/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) return;
+  var text = '女性専用フィットネスの見学を希望します。
+希望の日時：';
+  var url = 'https://line.me/R/oaMessage/%40makespace/?' + encodeURIComponent(text);
+  document.querySelectorAll('a[href*="page.line.me/makespace"]').forEach(function(a){ a.href = url; });
+})();
+
 // コンバージョン計測: LINE / 電話（委任リスナー。後から描画される要素にも効く）
 // LABEL.tel は空。電話用のCVアクションを管理画面で作成し、ラベルを入れるまでは
 // Google広告へは送らず、GA4 の generate_lead だけを送る。
